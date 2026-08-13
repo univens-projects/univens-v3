@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: univens
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 20.19.0
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: APP_URL
+        sync: false
